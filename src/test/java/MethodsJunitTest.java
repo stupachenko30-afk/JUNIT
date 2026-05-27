@@ -11,6 +11,9 @@ public class MethodsJunitTest {
     }
 
     public static boolean isPalindrome(String s){
+        if(s == null || s.isBlank()){
+            return false;
+        }
 
 
         s = s.replace(" ","");
@@ -21,15 +24,55 @@ public class MethodsJunitTest {
     }
     @Test
           void testIsPalindrome(){
-        fail(" Not yet implemented");
+       boolean res = MethodsJunitTest.isPalindrome("level");
+       assertTrue(res);
+       //positive test -> true
+        res = MethodsJunitTest.isPalindrome(" level  ");
+        assertTrue(res);
 
-//        assertFalse(isPalindrome(" hello"));
-//        assertTrue(isPalindrome( "level"));
+        res = MethodsJunitTest.isPalindrome("LeVel");
+        assertTrue(res);
+
+        res = MethodsJunitTest.isPalindrome("5level5");
+        assertTrue(res);
+
+        res = MethodsJunitTest.isPalindrome("242");
+        assertTrue(res);
+
+        res = MethodsJunitTest.isPalindrome("Name now one man");
+        assertTrue(res);
+
+        res = MethodsJunitTest.isPalindrome("\"!Name now one man!\"");
+        assertTrue(res);
+
+        //negative test -> false
+        res = MethodsJunitTest.isPalindrome(null);
+        assertFalse(res);
+
+        res = MethodsJunitTest.isPalindrome("");
+        assertFalse(res);
+
+        res = MethodsJunitTest.isPalindrome("  ");
+        assertFalse(res);
+
+        res = MethodsJunitTest.isPalindrome("Hello");
+        assertFalse(res);
+
+        res = MethodsJunitTest.isPalindrome("123");
+        assertFalse(res);
+
+        res = MethodsJunitTest.isPalindrome("_");
+        assertFalse(res);
+
+
+
+
+
 
 
     }
     @Test
       void testInsertFrom(){
-        fail(" Not yet implemented");
+       // fail(" Not yet implemented");
 
     }}
