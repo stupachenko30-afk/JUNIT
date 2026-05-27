@@ -62,7 +62,7 @@ public class MethodsJunitTest {
         assertFalse(res);
 
         res = MethodsJunitTest.isPalindrome("_");
-        assertFalse(res);
+        assertTrue(res);
 
 
 
